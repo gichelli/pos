@@ -1,0 +1,19 @@
+CREATE TABLE `employees` (
+  `employee_id` int(11) NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(45) DEFAULT NULL,
+  `last_name` varchar(45) DEFAULT NULL,
+  `street_name` varchar(45) DEFAULT NULL,
+  `street_number` int(11) DEFAULT NULL,
+  PRIMARY KEY (`employee_id`)
+  );
+
+  mvn clean install -DskipTests
+
+
+//to run jenkins container in docker posJenkins project
+  docker run --rm -u root -p 8080:8080 -v jenkins-data:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock -v "$HOME":/home jenkinsci/blueocean
+
+   stage('Build') { 
+        
+            steps {
+                sh 'mvn -B -DskipTests clean package' 

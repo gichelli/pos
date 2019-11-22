@@ -1,0 +1,32 @@
+version: '3'
+services:
+  db_pos:
+    container_name: db_pos
+    image: mysql:5.7
+    ports: 
+      - "3306:3306"
+    environment: 
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_ROOT_HOST=%
+      - MYSQL_DATABASE=pos
+      - MYSQL_USER=gichelli
+      - MYSQL_PASSWORD=password 
+    volumes:
+      - "$PWD/db_data :/var/lib/mysql"
+    networks:
+      - net
+  spring:
+    container_name: spring
+    image: spring
+    ports:
+      - "8087:8080"
+    expose:
+      - "8080" 
+    build: ./
+    depends_on:
+      - db_pos
+
+    networks:
+      - net
+networks:
+  net: 
