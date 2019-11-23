@@ -14,7 +14,7 @@ pipeline {
             steps {
                 sh 'mvn -B -DskipTests clean package' 
                 sh 'pwd'
- 
+                sh 'mvn spring-boot:run'
                 
             }
         }
