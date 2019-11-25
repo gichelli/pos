@@ -27,7 +27,7 @@ pipeline {
             }
         
             steps {
-                sh 'mvn test'  
+                /bin/sh 'mvn test'  
             }
             post{
             	always{
