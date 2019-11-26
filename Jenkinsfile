@@ -21,7 +21,7 @@ pipeline {
         stage('Test') { 
             agent{
                 docker{
-		    label 'docker'
+
    		    image 'mysql:5.7'
 		    args '--name mydatabase -e MYSQL_ROOT_PASSWORD=password -e MYSQL_ROOT_HOST=% -e MYSQL_DATABASE=pos -e MYSQL_USER=gichelli -e MYSQL_PASSWORD=password -d'
                 }
