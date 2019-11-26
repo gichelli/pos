@@ -16,12 +16,12 @@ import org.springframework.web.context.WebApplicationContext;
 
 
 
-@RunWith(SpringJUnit4ClassRunner.class)
+
 
 public class TestPosApp extends PosApplicationTests{
 	@Autowired
 	private WebApplicationContext webApplicationContext;
-
+	
 	private MockMvc mockMvc;
 	
 	@Before
