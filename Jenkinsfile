@@ -19,6 +19,15 @@ pipeline {
                  }
             }
             steps {
+                sh 'pwd'
+                
+            }
+        }
+        stage('test') {
+            agent {
+                docker { image 'maven:3-alpine'}
+            }
+            steps {
                 sh 'mvn test'
                 
             }
