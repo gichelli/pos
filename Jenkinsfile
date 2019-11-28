@@ -15,11 +15,11 @@ pipeline {
         stage('mysql') {
             agent {
                 docker { image 'mysql:5.7'
-                args '--name mydatabase -e MYSQL_ROOT_PASSWORD=password -d'
+                args '--name pos -e MYSQL_ROOT_PASSWORD=password -d'
                  }
             }
             steps {
-                sh 'pwd'
+                sh 'pwd/var/lib/mysql/pos'
                 
             }
         }
