@@ -19,7 +19,7 @@ pipeline {
                  }
             }
             steps {
-                sh 'pwd/var/lib/mysql/pos'
+                sh '/var/lib/mysql/pos'
                 
             }
         }
