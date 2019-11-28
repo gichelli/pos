@@ -19,7 +19,7 @@ pipeline {
                  }
             }
             steps {
-                sh 'cat /var/lib/mysql'
+                sh 'ls /var/lib/mysql'
                 
             }
         }
