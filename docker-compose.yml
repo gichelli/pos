@@ -7,10 +7,10 @@ services:
       - "3306:3306"
     environment: 
       - MYSQL_ROOT_PASSWORD=password
-      - MYSQL_ROOT_HOST=%
-      - MYSQL_DATABASE=pos
-      - MYSQL_USER=gichelli
-      - MYSQL_PASSWORD=password 
+      #- MYSQL_ROOT_HOST=%
+      #- MYSQL_DATABASE=pos
+      #- MYSQL_USER=gichelli
+      #- MYSQL_PASSWORD=password 
     volumes:
       - "$PWD/db_data :/var/lib/mysql"
     networks:
