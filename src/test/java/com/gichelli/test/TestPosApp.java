@@ -35,7 +35,7 @@ public class TestPosApp extends PosApplicationTests{
 		mockMvc.perform(get("/employees")).andExpect(status().isOk())
 				.andExpect(content().contentType("application/json;charset=UTF-8"))
 				//.andExpect(jsonPath("$.employee_id").value("1"))
-				.andExpect(jsonPath("$.[0].firstName").value("Mimi")).andExpect(jsonPath("$.[0].lastName").value("Munoz"))
+				.andExpect(jsonPath("$.[0].firstName").value("Gichelli")).andExpect(jsonPath("$.[0].lastName").value("Munoz"))
 				.andExpect(jsonPath("$.[0].streetName").value("ceylan")).andExpect(jsonPath("$.[0].streetNumber").value("6395"));
 				//.andExpect(jsonPath("$.empId").value("1")).andExpect(jsonPath("$.salary").value(3000));
 
