@@ -18,6 +18,7 @@ pipeline {
             agent {
                 docker { image 'mysql:5.7'
                 args '--name pos -e MYSQL_ROOT_PASSWORD=password -d'
+                volumes '$PWD/db_data :/var/lib/mysql'
                  }
             }
             steps {
