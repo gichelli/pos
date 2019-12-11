@@ -12,9 +12,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.junit.Test;
 
 
-//@Configuration
+@Configuration
 @RunWith(SpringRunner.class)
-  @SpringBootTest 
+@SpringBootTest 
   public class PosApplicationTests {
   
   @Test 
