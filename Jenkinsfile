@@ -8,10 +8,9 @@ pipeline {
                 docker { image 'maven:3-alpine' }
             }
             steps {
-                #sh 'mvn --version'
+
                 sh 'mvn -B -DskipTests clean package' 
-                #sh 'pwd'
-                #sh 'mvn spring-boot:run'
+                sh 'mvn spring-boot:run'
             }
         }
         stage('mysql') {
@@ -21,10 +20,7 @@ pipeline {
 
                  }
             }
-            #steps {
-             #   sh 'ls /var/lib/mysql'
-                
-            #}
+
         }
         stage('test') {
             agent {
