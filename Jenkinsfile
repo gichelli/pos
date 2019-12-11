@@ -3,7 +3,12 @@
 pipeline {
     agent none
     stages {
-
+        stage('Build') {
+            agent {
+                docker { image 'maven:3-alpine' }
+            }
+           
+        }
         stage('mysql') {
             agent {
                 docker { image 'mysql:latest'
