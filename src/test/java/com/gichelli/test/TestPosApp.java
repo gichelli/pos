@@ -10,6 +10,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
@@ -37,7 +38,7 @@ public class TestPosApp extends PosApplicationTests{
 	public void testEmployee() throws Exception {
 		System.out.println("here");
 		mockMvc.perform(get("/employees"))
-				.andExpect(content().contentType("application/json;charset=UTF-8"))
+				.andExpect(content().contentType(MediaType.APPLICATION_JSON))
 				//.andExpect(jsonPath("$.employee_id").value("1"))
 				.andExpect(jsonPath("$.[0].firstName").value("Gichelli")).andExpect(jsonPath("$.[0].lastName").value("Munoz"))
 				.andExpect(jsonPath("$.[0].streetName").value("ceylan")).andExpect(jsonPath("$.[0].streetNumber").value("6395"))
