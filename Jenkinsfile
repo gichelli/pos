@@ -20,7 +20,10 @@ pipeline {
 
                  }
             }
-
+            steps {
+                sh 'ls /var/lib/mysql'
+                
+            }
         }
         stage('test') {
             agent {
