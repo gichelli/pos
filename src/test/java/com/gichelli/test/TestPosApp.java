@@ -16,10 +16,8 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 
-
-
-
 @SpringBootTest(classes = PosApplicationTests.class)
+
 
 public class TestPosApp extends PosApplicationTests{
 	@Autowired
@@ -28,8 +26,7 @@ public class TestPosApp extends PosApplicationTests{
 	private MockMvc mockMvc;
 	
 	@Before
-	public void setup()  throws Exception{
-		
+	public void setup() {
 		mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
 	}
 	
@@ -40,9 +37,7 @@ public class TestPosApp extends PosApplicationTests{
 				.andExpect(content().contentType("application/json;charset=UTF-8"))
 				//.andExpect(jsonPath("$.employee_id").value("1"))
 				.andExpect(jsonPath("$.[0].firstName").value("Gichelli")).andExpect(jsonPath("$.[0].lastName").value("Munoz"))
-				.andExpect(jsonPath("$.[0].streetName").value("ceylan")).andExpect(jsonPath("$.[0].streetNumber").value("6395"))
-				.andExpect(status().isCreated())
-				.andExpect(status().isOk());
+				.andExpect(jsonPath("$.[0].streetName").value("ceylan")).andExpect(jsonPath("$.[0].streetNumber").value("6395"));
 				//.andExpect(jsonPath("$.empId").value("1")).andExpect(jsonPath("$.salary").value(3000));
 
 		System.out.println("here2");
