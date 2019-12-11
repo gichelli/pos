@@ -8,8 +8,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
@@ -19,6 +19,8 @@ import org.springframework.web.context.WebApplicationContext;
 
 
 
+@SpringBootTest(classes = PosApplicationTests.class)
+
 public class TestPosApp extends PosApplicationTests{
 	@Autowired
 	private WebApplicationContext webApplicationContext;
@@ -26,15 +28,15 @@ public class TestPosApp extends PosApplicationTests{
 	private MockMvc mockMvc;
 	
 	@Before
-	public void setup() {
-		MockitoAnnotations.initMocks(this);
-		this.mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
+	public void setup() throws Exception{
+		
+		mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
 	}
 	
 	@Test
 	public void testEmployee() throws Exception {
 		System.out.println("here");
-		mockMvc.perform(get("/employees")).andExpect(status().isOk())
+		mockMvc.perform(get("/employees")).andExpect(status().is(200))
 				.andExpect(content().contentType("application/json;charset=UTF-8"))
 				//.andExpect(jsonPath("$.employee_id").value("1"))
 				.andExpect(jsonPath("$.[0].firstName").value("Gichelli")).andExpect(jsonPath("$.[0].lastName").value("Munoz"))
