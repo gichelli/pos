@@ -36,7 +36,7 @@ public class TestPosApp extends PosApplicationTests{
 	@Test
 	public void testEmployee() throws Exception {
 		System.out.println("here");
-		mockMvc.perform(get("/employees")).andExpect(status().isOk())
+		mockMvc.perform(get("/employees"))
 				.andExpect(content().contentType("application/json;charset=UTF-8"))
 				//.andExpect(jsonPath("$.employee_id").value("1"))
 				.andExpect(jsonPath("$.[0].firstName").value("Gichelli")).andExpect(jsonPath("$.[0].lastName").value("Munoz"))
