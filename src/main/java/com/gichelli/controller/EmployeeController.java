@@ -46,8 +46,11 @@ public class EmployeeController {
 	public Optional<Employee> getEmployee(@PathVariable Long employeeId) {
 		if(employeeService.exist(employeeId))
 			return employeeService.getEmployee(employeeId);
-		else
+		else {
 			throw new NotFound("Employee does not exist");
+			//return
+		}
+		
 		
 	}
 	

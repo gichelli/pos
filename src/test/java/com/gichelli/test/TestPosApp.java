@@ -28,7 +28,7 @@ public class TestPosApp extends PosApplicationTests{
 	private MockMvc mockMvc;
 	
 	@Before
-	public void setup() throws Exception{
+	public void setup()  throws Exception{
 		
 		mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
 	}
@@ -36,11 +36,13 @@ public class TestPosApp extends PosApplicationTests{
 	@Test
 	public void testEmployee() throws Exception {
 		System.out.println("here");
-		mockMvc.perform(get("/employees")).andExpect(status().is(200))
+		mockMvc.perform(get("/employees")).andExpect(status().isOk())
 				.andExpect(content().contentType("application/json;charset=UTF-8"))
 				//.andExpect(jsonPath("$.employee_id").value("1"))
 				.andExpect(jsonPath("$.[0].firstName").value("Gichelli")).andExpect(jsonPath("$.[0].lastName").value("Munoz"))
-				.andExpect(jsonPath("$.[0].streetName").value("ceylan")).andExpect(jsonPath("$.[0].streetNumber").value("6395"));
+				.andExpect(jsonPath("$.[0].streetName").value("ceylan")).andExpect(jsonPath("$.[0].streetNumber").value("6395"))
+				.andExpect(status().isCreated())
+				.andExpect(status().isOk());
 				//.andExpect(jsonPath("$.empId").value("1")).andExpect(jsonPath("$.salary").value(3000));
 
 		System.out.println("here2");
