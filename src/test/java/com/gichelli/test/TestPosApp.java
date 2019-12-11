@@ -38,12 +38,12 @@ public class TestPosApp extends PosApplicationTests{
 	public void testEmployee() throws Exception {
 		System.out.println("here");
 		mockMvc.perform(get("/employees"))
-				.andExpect(content().contentType(MediaType.APPLICATION_JSON))
+				.andExpect(content().contentType(MediaType.APPLICATION_JSON)).andExpect(status().isOk())
 				//.andExpect(jsonPath("$.employee_id").value("1"))
 				.andExpect(jsonPath("$.[0].firstName").value("Gichelli")).andExpect(jsonPath("$.[0].lastName").value("Munoz"))
 				.andExpect(jsonPath("$.[0].streetName").value("ceylan")).andExpect(jsonPath("$.[0].streetNumber").value("6395"))
-				.andExpect(status().isCreated())
-				.andExpect(status().isOk());
+				.andExpect(status().isCreated());
+				
 				//.andExpect(jsonPath("$.empId").value("1")).andExpect(jsonPath("$.salary").value(3000));
 
 		System.out.println("here2");
