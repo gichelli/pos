@@ -24,7 +24,7 @@ import org.springframework.web.context.WebApplicationContext;
 @RunWith(SpringJUnit4ClassRunner.class)
 //@ContextConfiguration(classes = {TestContext.class, WebAppContext.class})
 @WebAppConfiguration
-public class TestPosApp extends PosApplicationTests{
+public class TestPosApp {
 	@Autowired
 	private WebApplicationContext webApplicationContext;
 	
