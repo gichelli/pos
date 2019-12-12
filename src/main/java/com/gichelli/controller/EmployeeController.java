@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.gichelli.errors.NotFound;
@@ -46,12 +45,8 @@ public class EmployeeController {
 	public Optional<Employee> getEmployee(@PathVariable Long employeeId) {
 		if(employeeService.exist(employeeId))
 			return employeeService.getEmployee(employeeId);
-		else {
+		else
 			throw new NotFound("Employee does not exist");
-			//return
-		}
-		
-		
 	}
 	
 
