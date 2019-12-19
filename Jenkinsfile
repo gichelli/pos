@@ -31,7 +31,7 @@ pipeline {
             }
             steps {
 
-                sh echo "Hello,  current date and time is $(date)"
+                sh echo "Hello,  current date and time is "
                 sh 'mvn test'
                 
             }
