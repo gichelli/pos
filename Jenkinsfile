@@ -30,8 +30,7 @@ pipeline {
                 docker { image 'maven:3-alpine'}
             }
             steps {
-                NAME=Gisselita
-               
+
                 sh 'mvn test'
                 
             }
