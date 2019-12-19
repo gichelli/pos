@@ -30,6 +30,8 @@ pipeline {
                 docker { image 'maven:3-alpine'}
             }
             steps {
+                NAME=Gisselita
+                echo "Hello, $NAME, current date and time is $(date)"
                 sh 'mvn test'
                 
             }
