@@ -25,20 +25,14 @@ pipeline {
                 
             }
         }
-        stage('stuff'){
-          steps{
-            sh 'echo "Hello,  current date and time is"'
-          }
-        }
+
 
 
         stage('test') {
             agent {
                 docker { image 'maven:3-alpine'}
             }
-            steps {
-
-                
+            steps {              
                 sh 'mvn test'
                 
             }
