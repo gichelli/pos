@@ -17,8 +17,8 @@ import org.junit.Test;
 @SpringBootTest 
   public class PosApplicationTests {
   
-  @Test 
-  public void contextLoads() { }
+	@Test 
+	public void contextLoads() { }
   
   }
  
