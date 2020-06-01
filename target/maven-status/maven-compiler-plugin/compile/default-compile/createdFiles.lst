@@ -1,6 +1,0 @@
-com/gichelli/errors/NotFound.class
-com/gichelli/repository/EmployeeRepository.class
-com/gichelli/model/Employee.class
-com/gichelli/controller/EmployeeController.class
-com/gichelli/service/EmployeeService.class
-com/gichelli/PosApplication.class
